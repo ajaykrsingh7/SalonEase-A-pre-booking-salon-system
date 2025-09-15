@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://salonease7.vercel.app/",
+    origin: "https://salonease7.vercel.app",
     credentials: true,
   })
 );
