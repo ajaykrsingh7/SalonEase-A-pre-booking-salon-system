@@ -9,12 +9,12 @@ const Payment = () => {
   const handlePayment = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/payment/order",
-        {
-          bookingId,
-          amount: totalAmount,
-        }
-      );
+  `${import.meta.env.VITE_API_URL}/api/payment/order`,
+  {
+    bookingId,
+    amount: totalAmount,
+  }
+);
 
       const options = {
         key: import.meta.env.VITE_RAZORPAY_KEY_ID,
@@ -24,10 +24,10 @@ const Payment = () => {
         description: "Payment for salon booking",
         order_id: data.order.id,
         handler: async function (response) {
-          await axios.post("http://localhost:5000/api/payment/verify", {
-            bookingId,
-            ...response,
-          });
+          await axios.post(`${import.meta.env.VITE_API_URL}/api/payment/verify`, {
+  bookingId,
+  ...response,
+});
           alert("Payment Successful!");
           window.location.href = "/my-bookings";
         },

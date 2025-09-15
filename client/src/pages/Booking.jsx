@@ -53,8 +53,9 @@ const Booking = () => {
       if (!bookingDate || !salon?._id) return;
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/bookings/${salon._id}?date=${bookingDate}`
-        );
+  `${import.meta.env.VITE_API_URL}/api/bookings/${salon._id}?date=${bookingDate}`
+);
+
 
         const slots = [];
 
@@ -171,10 +172,11 @@ const Booking = () => {
         totalAmount: total,
       };
 
-      const res = await axios.post(
-        "http://localhost:5000/api/bookings",
-        bookingData
-      );
+     const res = await axios.post(
+  `${import.meta.env.VITE_API_URL}/api/bookings`,
+  bookingData
+);
+
 
       navigate(`/booking/${salon._id}/payment`, {
         state: { bookingId: res.data._id, totalAmount: total },
@@ -209,11 +211,12 @@ const Booking = () => {
                 .filter(Boolean)
                 .map((photo, idx) => (
                   <div key={idx}>
-                    <img
-                      src={`http://localhost:5000/uploads/${photo}`}
-                      alt={`Salon Photo ${idx + 1}`}
-                      className="w-full h-72 object-cover rounded-lg"
-                    />
+                   <img
+  src={`${import.meta.env.VITE_API_URL}/uploads/${photo}`}
+  alt={`Salon Photo ${idx + 1}`}
+  className="w-full h-72 object-cover rounded-lg"
+/>
+
                   </div>
                 ))}
             </Slider>
