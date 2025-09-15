@@ -8,7 +8,7 @@ const API = axios.create({
   baseURL:
     import.meta.env.MODE === "development"
       ? "http://localhost:5000/api"
-      : `${import.meta.env.VITE_API_URL}/api`, // no extra slash
+      : "https://salonease-a-pre-booking-salon-system.onrender.com/api",
 });
 
 
