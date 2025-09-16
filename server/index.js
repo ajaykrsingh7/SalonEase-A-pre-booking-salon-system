@@ -14,7 +14,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://salonease7.vercel.app",
+    origin: [
+      "https://salonease7.vercel.app",
+      "https://salon-ease-a-pre-booking-salon-git-a8fb35-rajput-aj07s-projects.vercel.app"
+    ],
     credentials: true,
   })
 );
