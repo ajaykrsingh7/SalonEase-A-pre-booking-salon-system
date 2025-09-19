@@ -53,7 +53,7 @@ const Booking = () => {
       if (!bookingDate || !salon?._id) return;
       try {
         const res = await axios.get(
-  `${import.meta.env.VITE_API_URL}/api/bookings/${salon._id}?date=${bookingDate}`
+  `${import.meta.env.VITE_API_URL}api/bookings/${salon._id}?date=${bookingDate}`
 );
 
 
@@ -173,7 +173,7 @@ const Booking = () => {
       };
 
      const res = await axios.post(
-  `${import.meta.env.VITE_API_URL}/api/bookings`,
+  `${import.meta.env.VITE_API_URL}api/bookings`,
   bookingData
 );
 

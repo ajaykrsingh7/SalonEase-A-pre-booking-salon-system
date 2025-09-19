@@ -9,7 +9,7 @@ const Payment = () => {
   const handlePayment = async () => {
     try {
       const { data } = await axios.post(
-  `${import.meta.env.VITE_API_URL}/api/payment/order`,
+  `${import.meta.env.VITE_API_URL}api/payment/order`,
   {
     bookingId,
     amount: totalAmount,
@@ -24,7 +24,7 @@ const Payment = () => {
         description: "Payment for salon booking",
         order_id: data.order.id,
         handler: async function (response) {
-          await axios.post(`${import.meta.env.VITE_API_URL}/api/payment/verify`, {
+          await axios.post(`${import.meta.env.VITE_API_URL}api/payment/verify`, {
   bookingId,
   ...response,
 });
