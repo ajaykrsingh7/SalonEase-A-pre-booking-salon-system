@@ -14,7 +14,7 @@ const MyBookings = () => {
   const fetchBookings = async (userId) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/bookings/user/${userId}`
+        `https://salonease-a-pre-booking-salon-system.onrender.com/api/bookings/user/${userId}`
       );
       setBookings(res.data);
     } catch (error) {
@@ -24,7 +24,7 @@ const MyBookings = () => {
 
   const handleCancel = async (bookingId) => {
     try {
-      await axios.put(`http://localhost:5000/api/bookings/${bookingId}/cancel`);
+      await axios.put(`https://salonease-a-pre-booking-salon-system.onrender.com/api/bookings/${bookingId}/cancel`);
       const storedUserId = localStorage.getItem("userId");
       if (storedUserId) fetchBookings(storedUserId);
     } catch (error) {
@@ -36,7 +36,7 @@ const MyBookings = () => {
     try {
       const userId = localStorage.getItem("userId");
       await axios.post(
-        `http://localhost:5000/api/bookings/${bookingId}/review`,
+        `https://salonease-a-pre-booking-salon-system.onrender.com/api/bookings/${bookingId}/review`,
         { userId, rating, comment }
       );
       alert("Review submitted!");

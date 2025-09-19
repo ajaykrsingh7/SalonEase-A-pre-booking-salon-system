@@ -13,7 +13,7 @@ const MySalonBookings = () => {
   const fetchBookings = async (salonId) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/bookings/salon/${salonId}`
+        `https://salonease-a-pre-booking-salon-system.onrender.com/bookings/salon/${salonId}`
       );
       setBookings(res.data);
     } catch (error) {
@@ -23,7 +23,7 @@ const MySalonBookings = () => {
 
   const handleCancel = async (bookingId) => {
     try {
-      await axios.put(`http://localhost:5000/api/bookings/${bookingId}/cancel`);
+      await axios.put(`https://salonease-a-pre-booking-salon-system.onrender.com/api/bookings/${bookingId}/cancel`);
       const storedSalonId = localStorage.getItem("salonId");
       if (storedSalonId) fetchBookings(storedSalonId);
     } catch (error) {

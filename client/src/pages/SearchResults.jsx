@@ -83,7 +83,7 @@ const SearchResults = () => {
                 className="flex-shrink-0 w-64 bg-white rounded-2xl shadow-md overflow-hidden transition hover:shadow-lg"
               >
                 <img
-                  src={`http://localhost:5000/uploads/${salon.shopFrontPhoto}`}
+                  src={`https://salonease-a-pre-booking-salon-system.onrender.com/uploads/${salon.shopFrontPhoto}`}
                   alt={salon.salonName}
                   className="w-full h-40 object-cover"
                 />

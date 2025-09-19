@@ -27,7 +27,7 @@ const SalonRegistration = () => {
       });
 
       const response = await axios.post(
-        "http://localhost:5000/api/register/shop",
+        "https://salonease-a-pre-booking-salon-system.onrender.com/api/register/shop",
         formData,
         {
           headers: {
